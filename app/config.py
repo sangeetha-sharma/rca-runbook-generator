@@ -12,6 +12,4 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-print("Current working directory:", Path.cwd())
-print(".env exists:", Path(".env").exists())
 settings = Settings()
