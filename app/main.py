@@ -3,7 +3,7 @@ from fastapi import FastAPI
 
 def create_app() -> FastAPI:
     app = FastAPI(
-        title="AI-Assisted RCA & Runbook Generator"
+        title="Incident & RCA Platform"
         )
 
     @app.get("/health")

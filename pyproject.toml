@@ -1,7 +1,7 @@
 [project]
 name = "rca-runbook-generator"
 version = "0.1.0"
-description = "Add your description here"
+description = "Backend that ingests alerts, deduplicates them into incidents, reports MTTA/MTTR with SQL, and drafts RCAs with an LLM for human review"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
