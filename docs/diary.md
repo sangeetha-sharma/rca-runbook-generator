@@ -22,3 +22,26 @@ Test from a fresh clone (or CI) before calling anything done.
 Interview soundbite:
 "My definition of done is that it runs from a fresh clone. The first time I
 actually tested that, it failed, and that's now a rule."
+
+## Oct 4 — Schema design (Day 2 task)
+
+What I built:
+docs/database-design.md: 6 tables (services, incidents, incident_events,
+alerts, idempotency_keys, rca_drafts), an ER diagram, and index reasons.
+
+Decision + why:
+Deduplication lives in the database, not in Python: a partial unique index on
+(service_id, fingerprint) WHERE status = 'firing'. Monitoring sends alerts at
+least once, and a "check then insert" in Python has a gap where two identical
+requests can both insert. The database is the only place that sees both.
+
+What broke / what surprised me:
+Nothing broke. Surprise: a Python existence check looks correct but fails
+under concurrency.
+
+What I'd do differently:
+Keep the design to sensible defaults and move on; refine when the code needs it.
+
+Interview soundbite:
+"I made duplicate alerts impossible at the database level with a partial
+unique index, because an application check can't see concurrent requests."
