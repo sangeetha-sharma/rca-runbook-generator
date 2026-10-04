@@ -3,7 +3,7 @@ from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 from app.config import settings
 
 engine = create_async_engine(
-    str(settings.database_url), 
+    str(settings.database_url),
     echo=False,
     pool_pre_ping=True,
 )

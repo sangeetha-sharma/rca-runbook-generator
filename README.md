@@ -16,7 +16,7 @@ Built around a problem I know from on-call work: alert noise, incident tracking,
 
 ## Tech stack
 
-Python 3.12 · FastAPI · Pydantic v2 · SQLAlchemy 2.0 (async) + asyncpg · Alembic · PostgreSQL 16 · pytest + pytest-asyncio + testcontainers · httpx · uv · Docker Compose
+Python 3.12 · FastAPI · Pydantic v2 · SQLAlchemy 2.0 (async) + asyncpg · Alembic · PostgreSQL 16 · pytest + pytest-asyncio + testcontainers · httpx · uv · Docker Compose · ruff · pre-commit
 
 ## Run locally
 
